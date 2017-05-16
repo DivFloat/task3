@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Demo styles -->
+    <style>
+    html,
+    body {
+    	font-size: 62.5%;
+        position: relative;
+        height: 100%;
+    }
+    
+    body {
+        background: #fff;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.4rem;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .swiper-container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        /*    margin-left: -150px;
+        margin-top: -150px; */
+    }
+    
+    .swiper-slide {
+        /* background-image: url(''); */
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .swiper-slide:nth-of-type(1) {
+        background: -webkit-linear-gradient(155deg, rgba(0, 255, 0, 0), rgba(0, 170, 0, 1.0));
+        /*   opacity: 0.3; */
+    }
+    
+    #myCanvas {
+        z-index: 9999;
+        position: relative;
+        /*  animation-name: sunny;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-play-state: running; */
+        /* Safari and Chrome: */
+        -webkit-animation-name: sunny;
+        -webkit-animation-duration: 5s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-delay: 0;
+        -webkit-animation-iteration-count: 3;
+        -webkit-animation-direction: alternate;
+        -webkit-animation-play-state: running;
+        animation-fill-mode: forwards;
+    }
+    
+    @-webkit-keyframes sunny {
+        0% {
+            left: 0px;
+            top: 0px;
+        }
+        20% {
+            left: 10.4%;
+            top: 20.8%;
+        }
+        40% {
+            left: 30%;
+            top: 15%;
+        }
+        50% {
+            left: 40%;
+            top: 30%;
+        }
+        65% {
+            left: 55%;
+            top: 25%;
+        }
+        80% {
+            left: 70%;
+            top: 50%;
+        }
+        90% {
+            left: 50.4%;
+            top: 50%;
+        }
+        100% {
+        	left: 20%;
+        	top: 50%;
+        }
+    }
+    
+    .swiper-slide:nth-of-type(2) {
+        background-color: orange;
+    }
+    
+    .swiper-slide:nth-of-type(3) {
+        background-color: purple;
+    }
+    
+    .swiper-slide:nth-of-type(4) {
+        background-color: yellow;
+    }
+    
+    .swiper-slide:nth-of-type(5) {
+        background-color: pink;
+    }
+    @media only screen and (min-width: 320px) and (max-width: 750px) {
+    	.content,.content1,.content2{
+    		transform: skew(45deg, -45deg);
+    	}
+    }
+    @media only screen and (min-width: 750px){
+    	.content,.content1,.content2{
+    		transform: skew(70deg, -10deg);
+    	}
+    }
+    .content {
+        /* width: 35.2rem;/* 352px */
+      /*   height: 22rem; *//* 220px */
+        position: absolute;
+        left: 60%;
+        top: -50%;
+       /*  margin-left: -17.6rem; *//* 176px */
+       /*  margin-top: -11rem; *//* 110px */
+        /* transform: skew(70deg, -10deg); */
+        z-index: 999;
+        animation-name: luo;
+        animation-duration: 2s;
+        animation-delay: 0.4s;
+        animation-fill-mode: both;
+    }
+    
+    .content1 {
+        
+        position: absolute;
+        left: 60%;
+        top: -35%;
+       
+        /* transform: skew(70deg, -10deg); */
+        z-index: 888;
+        animation-name: luo1;
+        animation-duration: 2s;
+        animation-delay: 0.2s;
+        animation-fill-mode: both;
+    }
+    
+    .content2 {
+       
+        position: absolute;
+        left: 60%;
+        top: -20%;
+     
+        /* transform: skew(70deg, -10deg); */
+        z-index: 777;
+        animation-name: luo2;
+        animation-duration: 2s;
+        animation-delay: 0s;
+        animation-fill-mode: both;
+    }
+    @keyframes luo {
+        from {
+            top: -50%;
+        }
+        to {
+            top: 35%;
+        }
+    }
+    
+    @keyframes luo1 {
+        from {
+            top: -35%;
+        }
+        to {
+            top: 50%;
+        }
+    }
+    
+    @keyframes luo2 {
+        from {
+            top: -20%;
+        }
+        to {
+            top: 65%;
+        }
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide testSquare">
+                <canvas id="myCanvas">
+                    Your browser does not support the canvas element!
+                </canvas>
+                <div class="content cont-img">
+                    <img src="images/test01.jpg" alt="">
+                </div>
+                <div class="content1 cont-img">
+                    <img src="images/test01.jpg" alt="">
+                </div>
+                <div class="content2 cont-img">
+                    <img src="images/test01.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+            <div class="swiper-slide"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+    <!-- Swiper JS -->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        effect: 'cube',
+        grabCursor: true,
+        cube: {
+            shadow: true,
+            slideShadows: true,
+            shadowOffset: 20,
+            shadowScale: 0.94
+        }
+    });
+
+    var w = $(window).width();
+    var h = $(window).height();
+    $(".cont-img").css("width",w*0.183);
+    $(".cont-img").css("height",h*0.226);
+    $("cont-img").css("margin-left",w*(-0.092));
+    $("cont-img").css("margin-top",h*(-0.113));
+
+    var c = document.getElementById("myCanvas");
+    var cxt = c.getContext("2d");
+    var grd = cxt.createLinearGradient(0, 0, 175, 50);
+    grd.addColorStop(0, "orange");
+    grd.addColorStop(0, "red");
+    grd.addColorStop(1, "black");
+    cxt.fillStyle = grd;
+    // cxt.fillStyle="orange";
+    cxt.beginPath();
+    cxt.arc(50, 50, 50, 0, Math.PI * 2, true);
+    cxt.closePath();
+    cxt.fill();
+
+    $(document).ready(function() {
+        var testSquare = $(".testSquare");
+        // $(".testSquare").animate(
+        // {
+        //     opacity :'0.2',
+        //     backgroundColor:'orange'
+        // }
+        //     ,3000,animate(
+        //     {
+        //         opacity :'0.5',
+        //         backgroundColor:'red'
+        //     },3000,animate({
+        //         opacity :'0.8'
+        //     },3000,animate({
+        //         opacity :'1.0'
+        //     }))));
+        setInterval(loop, 2000);
+
+        function loop() {
+            testSquare.animate({
+                opacity: '0.6'
+            }, "slow");
+            testSquare.animate({
+                opacity: '0.8'
+            }, "slow");
+            testSquare.animate({
+                opacity: '1.0'
+            }, "slow");
+        }
+    });
+    // console.log($(document).width());//1920
+    // console.log($(document).height());//973
+   console.log(w);
+    </script>
+</body>
+
+</html>
